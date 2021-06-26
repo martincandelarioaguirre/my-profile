@@ -1,23 +1,14 @@
 import React from 'react';
-import './App.css';
+import './style.css';
+import Container from './Containers/Container';
+import NavBar from './Components/NavBar/NavBar';
 
 const App = (): React.ReactElement => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <NavBar />
+      {/* <p>Hello World</p> */}
+    </Container>
   );
 }
 
