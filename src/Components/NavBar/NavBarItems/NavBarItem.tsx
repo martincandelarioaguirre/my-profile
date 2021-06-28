@@ -4,10 +4,11 @@ import React from 'react';
 import './NavBarItem.css';
 
 const NavBarItem = (props: any): React.ReactElement => {
+    const { active, click, title } = props;
     return (
         <li className="nav-item">
-            <img src={props.img} className="icons" />
-            <a href="#">{props.title}</a>
+            {/* <img src={props.img} className="icons" /> */}
+            <a href="#" className={ active ? 'active' : ''} onClick={() => click(title)}>{title}</a>
         </li>
     );
 }
