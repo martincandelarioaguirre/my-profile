@@ -55,19 +55,6 @@ const NavBar = (): React.ReactElement => {
             }
         });
         setListItems(listUpdate);
-
-        // eslint-disable-next-line array-callback-return
-        // const listUpdated = list.map(item => {
-        //     if (item.title === title) {
-        //         const updateItem = {
-        //             ...item,
-        //             active: !item.active,
-        //         };
-        //         return updateItem;
-        //     }
-        //     return item;
-        // });
-        // setListItems(listUpdated);
     }, [list]);
 
     return (
