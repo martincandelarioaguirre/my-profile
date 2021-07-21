@@ -1,0 +1,42 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.col-4 {
+    flex-grow: 4;
+    /* flex-shrink: 3; */
+}
+
+.col-6 {
+    flex-grow: 6;
+    /* flex-shrink: 7; */
+}
+
+img {
+    width: 35%;
+}
+
+/* .wrapper {
+    width: 100%;
+}
+
+.col-3 {
+    display: inline-block;
+    box-shadow: 1px 1px 1px #222049;
+    width: 30%;
+}
+
+.col-7 {
+    display: inline-block;
+    box-shadow: 1px 1px 1px #222049;
+    width: 70%;
+}
+
+img {
+    width: 40%;
+    height: 15em;
+} */

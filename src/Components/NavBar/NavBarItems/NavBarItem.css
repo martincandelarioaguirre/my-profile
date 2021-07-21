@@ -1,20 +1,20 @@
-li {
+.nav-item {
     background: #3b5998;
-    flex: 1;
+    margin-left: 1rem;
 }
 
-li:hover {
-    background: rgba(0,0,0,.1);
+.nav-item:hover {
+    background: #29487d;
 }
 
-a {
+.nav-link {
     display: flex;
     color: #ffffff;
     text-decoration: none;
     font-size: .8rem;
     font-weight: bold;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     padding: 1em 0 1em 0;
     background: #3b5998;
 }
@@ -23,13 +23,14 @@ a {
     background-color: #29487d;
 }
 
-a:hover {
-    background: rgba(0,0,0,.1);
+.nav-link:hover {
+    background: #29487d;
 }
 
 @media (max-width: 600px) {
-    a {
+    .nav-item {
         height: 45px;
         border-bottom: 1px solid #29487d;
+        margin-left: 0;
     }
 }

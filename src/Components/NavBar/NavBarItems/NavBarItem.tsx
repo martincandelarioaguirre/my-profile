@@ -8,7 +8,7 @@ const NavBarItem = (props: any): React.ReactElement => {
     return (
         <li className="nav-item">
             {/* <img src={props.img} className="icons" /> */}
-            <a href="#" className={ active ? 'active' : ''} onClick={() => click(title)}>{title}</a>
+            <a href="#" className={ `nav-link ${active ? 'active' : '' }`} onClick={() => click(title)}>{title}</a>
         </li>
     );
 }

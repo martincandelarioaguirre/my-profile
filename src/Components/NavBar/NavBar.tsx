@@ -1,41 +1,41 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import './NavBar.css';
 import NavBarItem from './NavBarItems/NavBarItem';
 
 const NavBar = (): React.ReactElement => {
-    const [list, setListItems] = React.useState<{img: string, title: string, active: boolean }[]>([
+    const [list, setListItems] = React.useState<{title: string, active: boolean }[]>([
         {
-            img: process.env.PUBLIC_URL + '/img/icon_aboutme.png',
             title: 'ABOUT ME',
             active: false,
         },
         {
-            img: process.env.PUBLIC_URL + '/img/icon_cv.png',
             title: 'RESUMEN',
             active: false,
         },
         {
-            img: process.env.PUBLIC_URL + '/img/icon_projects.png',
             title: 'PORTFOLIO',
             active: false,
         },
         {
-            img: process.env.PUBLIC_URL + '/img/icon_skills.png',
             title: 'SKILL SETS',
             active: false,
         },
         {
-            img: process.env.PUBLIC_URL + '/img/icon_school.png',
             title: 'STUDIES',
             active: false,
         },
         {
-            img: process.env.PUBLIC_URL + '/img/icon_contactme.png',
             title: 'CONTACT ME',
             active: false,
         },
     ]);
+
+    const [isBurguerVisible,setIsVisible] = React.useState<boolean>();
     
+    const onClickBurger = () => {
+        setIsVisible(!isBurguerVisible);
+    }
 
     const onClickMenuOption = React.useCallback((title: string) => {
         // eslint-disable-next-line array-callback-return
@@ -57,17 +57,25 @@ const NavBar = (): React.ReactElement => {
         setListItems(listUpdate);
     }, [list]);
 
+    const menuActions = list.map((obj) => {
+        return (
+            <NavBarItem key={obj.title.trim()} title={obj.title} active={obj.active} click={onClickMenuOption} />
+        );
+    });
+
     return (
         <nav>
-            <ul className="nav-items">
-                {
-                    list.map((obj) => {
-                        return (
-                            <NavBarItem key={obj.title.trim()} title={obj.title} active={obj.active} click={onClickMenuOption} />
-                        );
-                    })
-                }
+            <a href="#" className="nav-logo">
+                Swords
+            </a>
+            <ul className={`nav-items ${isBurguerVisible ? "active" : ""}`}>
+                {menuActions}
             </ul>
+            <div className={`hamburguer ${isBurguerVisible ? "active" : ""}`} onClick={onClickBurger}>
+                <span className={`bar ${isBurguerVisible ? "active" : ""}`}></span>
+                <span className={`bar ${isBurguerVisible ? "active" : ""}`}></span>
+                <span className={`bar ${isBurguerVisible ? "active" : ""}`}></span>
+            </div>
         </nav>
     );
 }
